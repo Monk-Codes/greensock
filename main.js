@@ -39,6 +39,59 @@ const animateText = () => {
  });
 };
 
+// Function to create a spring-like effect with continuous rotation for background images
+const springRotateBackgroundImages = () => {
+ const backgroundImages = document.querySelectorAll(".background-image");
+
+ backgroundImages.forEach((img, index) => {
+  gsap.fromTo(
+   img,
+   {
+    y: -50,
+   },
+   {
+    y: 1,
+    ease: "elastic.in(1, .3)",
+    duration: 1,
+    scrollTrigger: {
+     trigger: img.parentElement,
+     start: "top bottom",
+     end: "bottom top",
+     scrub: true,
+     markers: false,
+    },
+   }
+  );
+ });
+};
+
+// Function to move the span from left to right across the background image
+const moveSpan = () => {
+ const movingSpans = document.querySelectorAll(".moving-span");
+
+ movingSpans.forEach((span) => {
+  gsap.fromTo(
+   span,
+   {
+    x: "-100%",
+   },
+   {
+    x: "150%",
+    duration: 1,
+    delay: 1,
+    ease: "circ.in",
+    scrollTrigger: {
+     trigger: span.parentElement,
+     start: "top bottom",
+     end: "bottom top",
+     scrub: true,
+     markers: false,
+    },
+   }
+  );
+ });
+};
+
 // Initialize Lenis and start animation frame
 const lenis = new Lenis();
 lenis.on("scroll", () => {
@@ -52,5 +105,7 @@ function raf(time) {
 
 requestAnimationFrame(raf);
 
-// Call the function to animate text
+// Call the functions to animate text, create spring effect with rotation for background images, and move the span across the background image
 animateText();
+springRotateBackgroundImages();
+moveSpan();
