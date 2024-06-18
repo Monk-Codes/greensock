@@ -12,7 +12,7 @@
     UI/UX Site 
     <br/>
     <br/>
-    <a href="https://github.com/Monk-Codes/greensock"><strong>Application made using REACT JS | Tailwind | Firebase</strong></a>
+    <a href="https://github.com/Monk-Codes/greensock"><strong>Application made using VITE | GSAP | LENIS </strong></a>
     <br/>
     <br/>
     <a href="https://github.com/Monk-Codes/greensock">View Demo</a>
